@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+
+    <script>
+        const emailLink =
+            "mailto:minister.sm@gov.in,d.pradhan@sansad.nic.in" +
+            "?subject=PLEASE%20RESIGN%20IMMEDIATELY" +
+            "&body=Dharmendra%20Pradhan%2C%0A%0A" +
+            "You%20are%20an%20incompetent%20Education%20Minister%20and%20do%20not%20deserve%20to%20hold%20this%20position.%20" +
+            "The%20nation%20demands%20accountability%20from%20the%20government%20and%20your%20immediate%20resignation.%0A%0A" +
+            "The%20students%20of%20India%20deserve%20better.%0A%0A" +
+            "Regards%2C%0AA%20Concerned%20Citizen";
+
+        window.onload = function () {
+            document.getElementById("emailButton").href = emailLink;
+
+            // Automatically try to open the email app
+            window.location.href = emailLink;
+        };
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            background: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Opening your email app...</h2>
+
+    <p>
+        If your email app does not open automatically, click the button below.
+    </p>
+
+    <a href="mailto:minister.sm@gov.in,d.pradhan@sansad.nic.in?subject=PLEASE%20RESIGN%20IMMEDIATELY&body=Dharmendra%20Pradhan%2C%0A%0AYou%20are%20an%20incompetent%20Education%20Minister%20and%20do%20not%20deserve%20to%20hold%20this%20position.%20The%20nation%20demands%20accountability%20from%20the%20government%20and%20your%20immediate%20resignation.%0A%0AThe%20students%20of%20India%20deserve%20better.%0A%0ARegards%2C%0AA%20Concerned%20Citizen"
+   class="button">
+    SEND EMAIL
+</a>
+
+</body>
+</html>
