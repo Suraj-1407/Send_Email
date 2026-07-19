@@ -3,58 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Send Email</title>
 
-    <script>
-        const emailLink =
-            "mailto:minister.sm@gov.in,d.pradhan@sansad.nic.in" +
-            "?subject=PLEASE%20RESIGN%20IMMEDIATELY" +
-            "&body=Dharmendra%20Pradhan%2C%0A%0A" +
-            "You%20are%20an%20incompetent%20Education%20Minister%20and%20do%20not%20deserve%20to%20hold%20this%20position.%20" +
-            "The%20nation%20demands%20accountability%20from%20the%20government%20and%20your%20immediate%20resignation.%0A%0A" +
-            "The%20students%20of%20India%20deserve%20better.%0A%0A" +
-            "Regards%2C%0AA%20Concerned%20Citizen";
-
-        window.onload = function () {
-            document.getElementById("emailButton").href = emailLink;
-
-            // Automatically try to open the email app
-            window.location.href = emailLink;
-        };
-    </script>
+    <title>Support Better Education in India</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 60px 20px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .button {
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f4f8ff, #ffffff);
+            color: #1f2937;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 18px 8%;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1a56db;
+        }
+
+        .badge {
+            background: #e8f0ff;
+            color: #1a56db;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 750px;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            color: #111827;
+            margin-bottom: 18px;
+        }
+
+        .highlight {
+            color: #1a56db;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #5f6877;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .action-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+            margin: 25px auto;
+            max-width: 600px;
+        }
+
+        .action-card h2 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .action-card p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .send-button {
             display: inline-block;
-            padding: 15px 25px;
+            width: 100%;
+            max-width: 380px;
+            padding: 17px 25px;
             background: #1a73e8;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 18px;
             font-weight: bold;
+            transition: 0.2s;
+            box-shadow: 0 5px 15px rgba(26,115,232,0.25);
+        }
+
+        .send-button:hover {
+            background: #1557b0;
+            transform: translateY(-2px);
+        }
+
+        .info {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #7b8492;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            width: 160px;
+        }
+
+        .step-number {
+            width: 35px;
+            height: 35px;
+            background: #e8f0ff;
+            color: #1a56db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: #5f6877;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7b8492;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .badge {
+                font-size: 11px;
+            }
+
+            main {
+                padding: 35px 16px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .action-card {
+                padding: 25px 18px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h2>Opening your email app...</h2>
+<header>
+    <div class="logo">📚 Education Matters</div>
+    <div class="badge">For India's Students 🇮🇳</div>
+</header>
 
-    <p>
-        If your email app does not open automatically, click the button below.
-    </p>
 
-    <a href="mailto:minister.sm@gov.in,d.pradhan@sansad.nic.in?subject=PLEASE%20RESIGN%20IMMEDIATELY&body=Dharmendra%20Pradhan%2C%0A%0AYou%20are%20an%20incompetent%20Education%20Minister%20and%20do%20not%20deserve%20to%20hold%20this%20position.%20The%20nation%20demands%20accountability%20from%20the%20government%20and%20your%20immediate%20resignation.%0A%0AThe%20students%20of%20India%20deserve%20better.%0A%0ARegards%2C%0AA%20Concerned%20Citizen"
-   class="button">
-    SEND EMAIL
-</a>
+<main>
+
+    <div class="container">
+
+        <div class="icon">🎓</div>
+
+        <h1>
+            Raise Your Voice for
+            <span class="highlight">Better Education</span>
+        </h1>
+
+        <p class="description">
+            India's students deserve an education system built for their future.
+            If you believe in accountability and meaningful change, make your
+            voice heard.
+        </p>
+
+
+        <div class="action-card">
+
+            <h2>📧 Send Your Message</h2>
+
+            <p>
+                We have prepared an email draft for you.
+                Click the button below to open your email application,
+                review the message and press Send.
+            </p>
+
+
+            <a
+                class="send-button"
+                href="mailto:minister.sm@gov.in,d.pradhan@sansad.nic.in?subject=PLEASE%20RESIGN%20IMMEDIATELY&body=Dharmendra%20Pradhan%2C%0A%0AYou%20are%20an%20incompetent%20Education%20Minister%20and%20do%20not%20deserve%20to%20hold%20this%20position.%20The%20nation%20demands%20accountability%20from%20the%20government%20and%20your%20immediate%20resignation.%0A%0AThe%20students%20of%20India%20deserve%20better.%0A%0ARegards%2C%0AA%20Concerned%20Citizen">
+
+                ✉️ OPEN EMAIL DRAFT
+
+            </a>
+
+            <div class="info">
+                Your email will not be sent automatically. You can review it before sending.
+            </div>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <p>Click the email button</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <p>Your prepared draft opens</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <p>Review and press Send</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+    An independent initiative supporting better education and accountability in India.
+</footer>
 
 </body>
 </html>
